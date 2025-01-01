@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f1f8f3;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://www.transparenttextures.com/patterns/flower-dots.png');
+            background-repeat: repeat;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 80px;
+            background-color: #ffffffb3;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-family: 'Roboto', sans-serif;
+            color: #2a7f62;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .result-btn {
+            background-color: #6c5ce7;
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            width: 50%;
+            display: block;
+            margin: 20px auto;
+        }
+        .result-btn:hover {
+            background-color: #4e3fb4;
+        }
+        .img-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .img-container img {
+            max-width: 80%;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .alert-info {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            font-weight: 600;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #5a6f5a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Prediction Result</h1>
+        </div>
+        <div class="img-container">
+            <img src="{{ image_url }}" alt="Uploaded Image">
+        </div>
+        <div class="alert alert-info">
+            <p><strong>Predicted Flower:</strong> {{ label }}</p>
+            <p><strong>Confidence:</strong> {{ confidence * 100 | round(2) }}%</p>
+        </div>
+        <a href="/" class="btn result-btn">Back to Home</a>
+        <div class="footer">
+            <p>&copy; 2025 Flower Recognition. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, for Bootstrap features like modals) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
